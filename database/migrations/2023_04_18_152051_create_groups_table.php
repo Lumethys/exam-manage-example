@@ -15,6 +15,8 @@ return new class () extends Migration {
             $table->string('name')->unique();
             $table->string('upload_assignment_url')->nullable()->unique();
             $table->foreignId('exam_id')->constrained();
+            $table->foreignId('school_id')->constrained();
+            $table->foreignId('managing_user_id')->constrained('users', 'id');
             $table->timestamps();
         });
     }
