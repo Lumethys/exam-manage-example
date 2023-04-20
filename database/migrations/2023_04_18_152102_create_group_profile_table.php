@@ -12,8 +12,8 @@ return new class () extends Migration {
     {
         Schema::create('group_profile', function (Blueprint $table) {
             $table->id();
-            $table->foreign("profile_id")->reference('profiles')->on('id');
-            $table->foreign("group_id")->reference('groups')->on('id');
+            $table->foreignId("profile_id")->constrained();
+            $table->foreignId("group_id")->constrained();
             $table->integer("position");
             $table->timestamps();
 
