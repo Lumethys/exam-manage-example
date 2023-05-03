@@ -15,9 +15,9 @@ class School extends Model
         return $this->hasMany(InviteCode::class);
     }
 
-    public function profiles(): HasMany
+    public function members(): HasMany
     {
-        return $this->hasMany(Profile::class);
+        return $this->hasMany(Member::class);
     }
 
     public function groups(): HasMany

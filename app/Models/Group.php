@@ -25,8 +25,8 @@ class Group extends Model
         return $this->belongsTo(Exam::class);
     }
 
-    public function profiles()
+    public function members()
     {
-        return $this->belongsToMany(Profile::class, 'group_profile');
+        return $this->belongsToMany(Member::class, 'group_member');
     }
 }

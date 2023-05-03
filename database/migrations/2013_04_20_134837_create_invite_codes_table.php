@@ -14,7 +14,6 @@ return new class () extends Migration {
             $table->id();
             $table->string('code')->unique();
             $table->foreignId('school_id')->constrained();
-            $table->foreignId('exam_id')->constrained();
             $table->timestamps();
         });
     }

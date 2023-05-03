@@ -10,14 +10,15 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('group_profile', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("profile_id")->constrained();
-            $table->foreignId("group_id")->constrained();
-            $table->integer("position");
+            $table->string('fullname')->nullable();
+            $table->integer('age')->nullable();
+            $table->integer('gender')->nullable();
+            $table->foreignId('school_id')->constrained();
+            $table->string('tel')->nullable();
+            $table->string('address')->nullable();
             $table->timestamps();
-
-            $table->unique(['profile_id', 'group_id']);
         });
     }
 
@@ -26,6 +27,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('group_profile');
+        Schema::dropIfExists('members');
     }
 };
