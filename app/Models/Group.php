@@ -10,6 +10,19 @@ class Group extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'exam_id',
+        'school_id',
+        'managing_user_id',
+        'upload_assignment_url'
+    ];
+
     public function school(): BelongsTo
     {
         return $this->belongsTo(School::class);

@@ -9,6 +9,17 @@ class Exam extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'start_date',
+        'end_date',
+        'year',
+    ];
+
     public function groups()
     {
         return $this->hasMany(Group::class);

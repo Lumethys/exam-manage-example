@@ -11,6 +11,15 @@ class InviteCode extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'code',
+    ];
+
+    /**
      * The table associated with the model.
      *
      * @var string
@@ -25,5 +34,10 @@ class InviteCode extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function exam(): BelongsTo
+    {
+        return $this->belongsTo(Exam::class);
     }
 }

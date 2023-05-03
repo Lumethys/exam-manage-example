@@ -10,6 +10,22 @@ class Member extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'firstname',
+        'lastname',
+        'age',
+        'gender',
+        'school_id',
+        'tel',
+        'address',
+    ];
+
+
     public function school(): BelongsTo
     {
         return $this->belongsTo(School::class);
