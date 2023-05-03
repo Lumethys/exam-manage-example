@@ -12,8 +12,9 @@ return new class () extends Migration {
     {
         Schema::create('invite_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code')->unique();
             $table->foreignId('school_id')->constrained();
+            $table->foreignId('exam_id')->constrained();
             $table->timestamps();
         });
     }
