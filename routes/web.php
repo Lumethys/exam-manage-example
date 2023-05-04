@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +29,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/group', [GroupController::class, 'index'])->name('users.group');
+
+    Route::put('/group/{id}', [GroupController::class, 'update'])->name('users.group.update');
+
+    Route::post('/group/{id}/members', [MemberController::class, 'store'])->name('users.member.store');
+});
+
 
 require __DIR__.'/auth.php';

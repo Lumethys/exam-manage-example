@@ -15,7 +15,7 @@ return new class () extends Migration {
             $table->string('fullname')->nullable();
             $table->integer('age')->nullable();
             $table->integer('gender')->nullable();
-            $table->foreignId('school_id')->constrained();
+            $table->foreignId('school_id')->constrained()->nullable();
             $table->string('tel')->nullable();
             $table->string('address')->nullable();
             $table->timestamps();

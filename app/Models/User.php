@@ -54,6 +54,6 @@ class User extends Authenticatable
 
     public function group(): HasOne
     {
-        return $this->hasOne(Group::class);
+        return $this->hasOne(Group::class, 'managing_user_id', 'id');
     }
 }

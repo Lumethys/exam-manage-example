@@ -16,6 +16,13 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+         <!--Invite Code -->
+         <div class="mt-4">
+            <x-input-label for="invite_code" :value="__('InviteCode')" />
+            <x-text-input id="invite_code" class="block mt-1 w-full" type="text" name="invite_code" :value="old('invite_code')" required autocomplete="invite_code" />
+            <x-input-error :messages="$errors->get('invite_code')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />

@@ -1,0 +1,10 @@
+<?php
+
+namespace App\Enums;
+
+enum MemberPosition: int
+{
+    case Regular = 0;
+    case GroupLeader = 1;
+    case Teacher = 2;
+}
